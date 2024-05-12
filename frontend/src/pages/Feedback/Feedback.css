@@ -1,0 +1,77 @@
+/* Feedback List Container */
+.feedback_container {
+    width: 100%;
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 20px;
+    background-color: #f8b6b6;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Feedback List Heading */
+.feedback_heading {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Feedback List */
+.feedback_list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Feedback List Item */
+.feedback_item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Feedback Message */
+.feedback_message {
+    font-size: 16px;
+    color: #333;
+}
+
+/* No Feedbacks Message */
+.no_feedbacks {
+    font-size: 18px;
+    color: #888;
+}
+
+.post_feedback {
+    margin-top: 20px;
+}
+
+.post_feedback input,
+.post_feedback textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.post_feedback textarea {
+    height: 100px;
+    /* Adjust height as needed */
+}
+
+.post_feedback button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.post_feedback button:hover {
+    background-color: #0056b3;
+}
+
+/* Optional: Add more styling as needed */
