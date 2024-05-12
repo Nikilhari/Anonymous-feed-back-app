@@ -13,7 +13,7 @@ const Login = () => {
             rollNumber: rollNo.value,
             password: password.value
         }
-        await axios.post("http://localhost:3000/auth/login", values).then((res) => {
+        await axios.post("https://anonymous-feed-back-app-1.onrender.com/auth/login", values).then((res) => {
             localStorage.setItem("token", res.data);
             navigate('/Feedback')
         }).catch((err) => {

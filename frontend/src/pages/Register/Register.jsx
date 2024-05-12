@@ -24,7 +24,7 @@ const Register = () => {
                 rollNumber: rollNo.value,
                 password: userPass.value
             };
-            await axios.post('http://localhost:3000/auth/register', values)
+            await axios.post('https://anonymous-feed-back-app-1.onrender.com/auth/register', values)
                 .then(res => { navigate('/') })
                 .catch(err => { console.log(err) });
         }

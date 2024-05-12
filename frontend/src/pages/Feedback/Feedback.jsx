@@ -6,12 +6,10 @@ const Feedback = () => {
     const [feedbacks, setFeedbacks] = useState([]);
     const [receiverRollNumber, setReceiverRollNumber] = useState('');
     const [message, setMessage] = useState('');
-    const [deleteFeedback, setDeletefeedback] = useState('');
-
     const postFeedback = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.post("http://localhost:3000/feedback", { receiverRollNumber, message }, {
+            const response = await axios.post("https://anonymous-feed-back-app-1.onrender.com/feedback", { receiverRollNumber, message }, {
                 headers: {
                     Authorization: token
                 },
@@ -28,7 +26,7 @@ const Feedback = () => {
         try {
             console.log(feed)
             const token = localStorage.getItem('token');
-            const response = await axios.delete(`http://localhost:3000/feedback/${feed}`, {
+            const response = await axios.delete(`https://anonymous-feed-back-app-1.onrender.com/feedback/${feed}`, {
                 headers: {
                     Authorization: token
                 },
@@ -43,7 +41,7 @@ const Feedback = () => {
         const getFeedbacks = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get("http://localhost:3000/feedback", {
+                const response = await axios.get("https://anonymous-feed-back-app-1.onrender.com/feedback", {
                     headers: {
                         Authorization: token
                     },
@@ -67,7 +65,6 @@ const Feedback = () => {
                         {feedbacks.map((feedback, index) => (
                             <li key={index} className="feedback_item">
                                 <p className="feedback_message">{feedback.message}</p>
-                                {feedback._id}
                                 <button onClick={() => {
                                     handleDelete(feedback._id);
                                 }}>delete</button>
