@@ -7,7 +7,6 @@ import Feedback from './pages/Feedback/Feedback';
 const App = () => {
   return (
     <>
-      <Navbar />
       <Routes>
         <Route path={'/'} element={<Login />} />
         <Route path={'/Register'} element={<Register />} />

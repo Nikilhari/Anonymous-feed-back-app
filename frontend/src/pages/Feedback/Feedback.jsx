@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Feedback.css';
-
+import Navbar_logout from '../../components/Navbar_logout/Navbar_logout';
 const Feedback = () => {
     const [feedbacks, setFeedbacks] = useState([]);
     const [receiverRollNumber, setReceiverRollNumber] = useState('');
@@ -32,7 +32,7 @@ const Feedback = () => {
                 },
             });
             console.log(response.data)
-            location.reload();
+            window.location.reload();
         } catch (error) {
             console.error(error)
         }
@@ -56,6 +56,7 @@ const Feedback = () => {
 
     return (
         <>
+            <Navbar_logout />
             <div className="feedback_container">
                 <h2 className="feedback_heading">My Feedbacks</h2>
                 {feedbacks.length === 0 ? (
