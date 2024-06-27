@@ -37,5 +37,4 @@ auth_routes.post('/login', async (req, res) => {
         console.error(error);
     }
 })
-
 export default auth_routes;

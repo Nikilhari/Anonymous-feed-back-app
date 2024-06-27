@@ -32,9 +32,7 @@ const authenticateUser = (req, res, next) => {
         return res.status(401).json({ error: 'Invalid token' });
     }
 };
-
 feedbackRouter.use(authenticateUser);
-
 const getFeedbacks = async (req, res) => {
     const userNumber = req.user.rollNumber;
     console.log(userNumber);
