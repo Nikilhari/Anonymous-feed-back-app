@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <div className={styles.c}>
             <div className={styles.logo}>
-                <h1>WHISPER WIRE</h1>
+                <h1 title='Shh!!!'>WHISPER WIRE</h1>
             </div>
             <div className={styles.enclose}>
                 <Link to='/register' className={styles.contents}>

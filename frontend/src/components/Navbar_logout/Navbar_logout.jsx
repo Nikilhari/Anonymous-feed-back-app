@@ -8,7 +8,9 @@ const Navbar_logout = () => {
                 <h1>WHISPER WIRE</h1>
             </div>
             <div className={styles.enclose}>
-                <Link to='/' className={styles.contents}>
+                <Link to='/' className={styles.contents} onClick={() => {
+                    localStorage.removeItem('token');
+                }}>
                     <h3>Logout</h3>
                 </Link>
             </div>

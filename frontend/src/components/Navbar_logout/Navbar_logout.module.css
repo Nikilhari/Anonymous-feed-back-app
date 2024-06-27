@@ -31,7 +31,7 @@
     text-decoration: none;
     color: black;
     display: flex;
-    padding: 0.48rem;
+    padding: 0.7rem 0.48rem;
     width: 8rem;
     height: 2.5rem;
     align-items: center;
@@ -39,7 +39,7 @@
 }
 
 .contents:hover {
-    background: #4158d0;
+    background: linear-gradient(-135deg, #4158d0, #a27cef);
     color: white;
     border-radius: 10px;
 }

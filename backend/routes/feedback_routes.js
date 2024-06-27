@@ -39,9 +39,9 @@ const getFeedbacks = async (req, res) => {
     const userNumber = req.user.rollNumber;
     console.log(userNumber);
     const feedbacks = await Feedback.find({ receiverRollNumber: userNumber });
-    if (!feedbacks) {
-        return res.json({ message: 'No feedbacks' });
-    }
+    // if (!feedbacks) {
+    //     return res.json({ message: 'No feedbacks' });
+    // }
     return res.json({ feedbacks });
 };
 
