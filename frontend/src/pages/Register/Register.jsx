@@ -17,6 +17,7 @@ const Register = () => {
         const userConfirmPass = document.getElementById("confirmPassword");
         event.preventDefault();
         if (userPass.value !== userConfirmPass.value) {
+            setLoading(false);
             const errorMessage = document.createElement('h4');
             errorMessage.innerHTML = "Please recheck your password";
             container.appendChild(errorMessage);
