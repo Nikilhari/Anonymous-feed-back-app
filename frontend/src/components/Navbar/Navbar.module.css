@@ -1,45 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 .c {
-    font-family: "Roboto Condensed", sans-serif;
-    position: sticky;
-    background-color: #e3f2fd;
-    height: 7rem;
-    align-content: center;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1a1a1a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+  height: 70px;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 20rem;
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  cursor: default;
+  transition: color 0.3s ease;
+}
+
+.logo h1:hover {
+  color: #6a6aff;
 }
 
 .enclose {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-right: 4rem;
-    width: 50rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .contents {
-    text-decoration: none;
-    color: black;
-    display: flex;
-    padding: 0.7rem 0.48rem;
-    width: 8rem;
-    height: 2.5rem;
-    align-items: center;
-    justify-content: space-around;
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.contents h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 .contents:hover {
-    background: linear-gradient(-135deg, #4158d0, #a27cef);
-    color: white;
-    border-radius: 10px;
+  color: #6a6aff;
 }
+
+.contents:hover h3 {
+  background-color: rgba(106, 106, 255, 0.1);
+}
+
+@media (max-width: 600px) {
+  .c {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .logo {
+    margin-bottom: 1rem;
+  }
+
+  .enclose {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .contents h3 {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+

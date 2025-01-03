@@ -1,153 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+
+
 .wrapper {
-    width: 380px;
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  background-color: #1e1e1e;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 60px;
+  height: fit-content;
+  border-radius: 36px;
+  border-color: #6a6aff;
+  box-shadow: 0 0 0 2px rgba(106, 106, 255, 0.7);
 }
 
-.wrapper .title {
-    font-size: 35px;
-    font-weight: 600;
-    text-align: center;
-    line-height: 100px;
-    color: #fff;
-    user-select: none;
-    border-radius: 15px 15px 0 0;
-    background: linear-gradient(-135deg, #a27cef, #4158d0);
-}
-
-.wrapper form {
-    padding: 10px 30px 50px 30px;
+.title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #6a6aff;
 }
 
 .enclose {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
 }
 
-.wrapper form .field {
-    height: 50px;
-    width: 100%;
-    margin-top: 20px;
-    position: relative;
+.field {
+  position: relative;
+  margin-bottom: 20px;
 }
 
-.wrapper form .field input {
-    height: 100%;
-    width: 100%;
-    outline: none;
-    font-size: 17px;
-    padding-left: 20px;
-    border: 1px solid lightgrey;
-    border-radius: 25px;
+.field input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.wrapper form .field input:focus,
-form .field input:valid {
-    border-color: #4158d0;
+.field input:focus {
+  border-color: #6a6aff;
+  box-shadow: 0 0 0 2px rgba(106, 106, 255, 0.2);
 }
 
-.wrapper form .field label {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    color: #999999;
-    font-weight: 400;
-    font-size: 17px;
-    pointer-events: none;
-    transform: translateY(-50%);
-    transition: all 0.3s ease;
+.field label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #888;
+  pointer-events: none;
+  transition: 0.3s ease all;
+  background: transparent;
 }
 
-form .field input:focus~label,
-form .field input:valid~label {
-    top: 0%;
-    font-size: 16px;
-    color: #4158d0;
-    background: #fff;
-    transform: translateY(-50%);
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label {
+  top: 0;
+  font-size: 12px;
+  color: #6a6aff;
+  background-color: #1e1e1e;
+  padding: 0 5px;
 }
 
-
-form .field input[type="submit"] {
-    color: #fff;
-    border: none;
-    padding-left: 0;
-    margin-top: -10px;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-    background: linear-gradient(-135deg, #4158d0, #a27cef);
-    transition: all 0.3s ease;
+.field input[type="submit"] {
+  background-color: #6a6aff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-form .signLink {
-    color: #262626;
-    margin-top: 20px;
-    text-align: center;
+.field input[type="submit"]:hover {
+  background-color: #5a5aff;
 }
 
-form .signLink Link {
-    color: #4158d0;
-    text-decoration: none;
+.signLink {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #888;
+}
+
+.signLink a {
+  color: #6a6aff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.signLink a:hover {
+  color: #5a5aff;
 }
 
 .loader {
-    width: 50px;
-    aspect-ratio: 1;
-    color: #398EB6;
-    background: currentColor;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.loader:before {
-    content: "";
-    position: absolute;
-    background:
-        radial-gradient(farthest-side at bottom right, #0000 94%, currentColor 96%) 0 0,
-        radial-gradient(farthest-side at bottom left, #0000 94%, currentColor 96%) 100% 0,
-        radial-gradient(farthest-side at top left, #0000 94%, currentColor 96%) 100% 100%,
-        radial-gradient(farthest-side at top right, #0000 94%, currentColor 96%) 0 100%;
-    background-size: 25px 25px;
-    background-repeat: no-repeat;
-    animation:
-        l39-1 1s infinite,
-        l39-2 1s infinite;
+.loader:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #6a6aff;
+  border-color: #6a6aff transparent #6a6aff transparent;
+  animation: loader 1.2s linear infinite;
 }
 
-@keyframes l39-1 {
-
-    0%,
-    10%,
-    90%,
-    100% {
-        inset: 0
-    }
-
-    40%,
-    60% {
-        inset: -10px
-    }
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-@keyframes l39-2 {
+@media (max-width: 480px) {
+  .enclose {
+    padding: 20px;
+  }
 
-    0%,
-    40% {
-        transform: rotate(0)
-    }
+  .title {
+    font-size: 20px;
+  }
 
-    60%,
-    100% {
-        transform: rotate(90deg)
-    }
+  .field input {
+    font-size: 14px;
+  }
+
+  .field label {
+    font-size: 14px;
+  }
 }
+
