@@ -7,15 +7,21 @@ dotenv.config();
 auth_routes.post('/register', async (req, res) => {
     try {
         const { rollNumber, password } = req.body;
-        const newUser = new User({ rollNumber, password })
+        const existingUser = await User.findOne({ rollNumber });
+        if (existingUser) {
+            return res.status(400).json({ message: "User already registered" });
+        }
+        const newUser = new User({ rollNumber, password });
         await newUser.save();
-        console.log("Data saved successfully");
-        res.json(newUser)
-    }
-    catch (error) {
+
+        console.log("User registered successfully");
+        res.status(201).json(newUser);
+    } catch (error) {
         console.error(error);
+        res.status(500).json({ message: "Server error" });
     }
-})
+});
+
 auth_routes.post('/login', async (req, res) => {
     try {
         const { rollNumber, password } = req.body;

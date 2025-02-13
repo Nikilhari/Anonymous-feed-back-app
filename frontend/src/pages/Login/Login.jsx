@@ -1,42 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Login.module.css";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import axios from "axios";
-import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+
 const Login = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+
   const handleSubmit = async (event) => {
-    setLoading(true);
     event.preventDefault();
+    setLoading(true);
+
     const rollNo = document.getElementById("rollNumber");
     const password = document.getElementById("password");
+
     const values = {
       rollNumber: rollNo.value,
       password: password.value,
     };
-    await axios
-      .post("https://anonymous-feed-back-app-1.onrender.com/auth/login", values)
-      .then((res) => {
-        setLoading(false);
-        if (res.data === "user_not_found") {
-          alert("Enter valid username/password");
-        } else if (res.data === "password_do_not_match") {
-          alert("Enter valid usermame/password");
-        } else {
-          localStorage.setItem("token", res.data);
-          navigate("/Feedback");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+
+    try {
+      const response = await axios.post(
+        "https://anonymous-feed-back-app-1.onrender.com/auth/login",
+        values
+      );
+
+      setLoading(false);
+
+      if (response.data === "user_not_found") {
+        toast.error("User does not exist. Please register first.");
+      } else if (response.data === "password_do_not_match") {
+        toast.error("Incorrect password. Please try again.");
+      } else {
+        localStorage.setItem("token", response.data);
+        toast.success("Login successful!");
+        setTimeout(() => navigate("/Feedback"), 1500); // Delay to show toast
+      }
+    } catch (error) {
+      setLoading(false);
+      console.error(error);
+      toast.error("Something went wrong. Please try again later.");
+    }
   };
+
   return (
     <>
       <Navbar />
+      <Toaster position="top-center" reverseOrder={false} />
       {loading ? (
         <div className="loader"></div>
       ) : (
