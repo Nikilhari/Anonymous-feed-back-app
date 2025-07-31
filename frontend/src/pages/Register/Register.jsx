@@ -30,7 +30,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "https://anonymous-feed-back-app-1.onrender.com/auth/register",
+        `${import.meta.env.VITE_API_URL}/auth/register`,
         values
       );
 

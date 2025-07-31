@@ -23,7 +23,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "https://anonymous-feed-back-app-1.onrender.com/auth/login",
+        `${import.meta.env.VITE_API_URL}/auth/login`,
         values
       );
 
