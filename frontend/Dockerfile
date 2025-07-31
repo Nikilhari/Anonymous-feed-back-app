@@ -13,7 +13,7 @@ RUN npm run build
 # Use a lightweight web server to serve the frontend
 FROM nginx:alpine
 
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
 # Expose the frontend port
 EXPOSE 80
 # Start the Nginx server
