@@ -21,6 +21,9 @@ const connectDB = async () => {
     }
 }
 connectDB();
+app.get('/', (req, res) => {
+    res.send("Welcome to the Feedback App API");
+});
 app.use('/auth', auth_routes);
 app.use('/feedback', feedback_router)
 app.listen(process.env.PORT, "0.0.0.0", () => {
