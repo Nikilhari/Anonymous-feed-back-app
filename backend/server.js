@@ -23,6 +23,6 @@ const connectDB = async () => {
 connectDB();
 app.use('/auth', auth_routes);
 app.use('/feedback', feedback_router)
-app.listen(process.env.PORT, () => {
-    console.log("server started in port http://localhost:3000")
+app.listen(process.env.PORT, "0.0.0.0", () => {
+    console.log("server started in port http://localhost:" + process.env.PORT);
 })
