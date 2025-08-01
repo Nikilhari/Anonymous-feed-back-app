@@ -27,6 +27,10 @@ jobs:
         id: vars
         run: echo "TAG=${GITHUB_SHA::7}" >> $GITHUB_ENV
 
+      - name: Create .env for frontend
+        run: |
+          echo "VITE_API_URL=${{ secrets.BACKEND_URL }}" > frontend/.env
+
       - name: Build and Push Backend Image
         run: |
           docker build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/whispher-wire-backend:$TAG ./backend
