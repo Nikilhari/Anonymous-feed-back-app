@@ -4,7 +4,6 @@ FROM node:18 AS build
 WORKDIR /app
 # Copy dependency files first
 COPY package*.json ./
-COPY .env
 # Install dependencies
 RUN npm install
 # Copy the rest of the frontend code
